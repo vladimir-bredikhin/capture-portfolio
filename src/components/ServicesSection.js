@@ -3,7 +3,7 @@ import { clock, diaphragm, money, teamwork } from '../img/icon';
 
 const ServicesSection = () => {
   return (
-    <div className='services'>
+    <section className='services'>
       <div className='description'>
         <h2>
           High <span>quality</span> services
@@ -40,7 +40,7 @@ const ServicesSection = () => {
         </div>
         <img src={home2} alt='' />
       </div>
-    </div>
+    </section>
   );
 };
 
