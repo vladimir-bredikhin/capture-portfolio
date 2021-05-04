@@ -12,9 +12,6 @@ const Section = styled.section`
 const Description = styled.div`
   flex: 1;
   padding-right: 5rem;
-  h2 {
-    font-weight: lighter;
-  }
 `;
 
 const Image = styled.div`

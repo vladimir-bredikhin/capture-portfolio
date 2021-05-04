@@ -31,6 +31,7 @@ button {
 
 h2 {
   font-size: 4rem;
+  font-weight: 500;
 }
 
 h3 {
@@ -38,6 +39,7 @@ h3 {
 }
 
 h4 {
+  font-size: 2rem;
   font-weight: bold;
 }
 
