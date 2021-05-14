@@ -1,34 +1,22 @@
-import React from 'react';
-import athlete from '../img/athlete-small.png';
-import theracer from '../img/theracer-small.png';
-import goodtimes from '../img/goodtimes-small.png';
-import styled from 'styled-components';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import styled from 'styled-components';
+import { MovieState } from '../movieState';
 
 const OurWork = () => {
+  const [movies] = useState(MovieState);
+
   return (
     <Work>
-      <Movie>
-        <h2>The Ahtlete</h2>
-        <div className='line'></div>
-        <Link>
-          <img src={athlete} alt='athlete' />
-        </Link>
-      </Movie>
-      <Movie>
-        <h2>The Racer</h2>
-        <div className='line'></div>
-        <Link>
-          <img src={theracer} alt='theracer' />
-        </Link>
-      </Movie>
-      <Movie>
-        <h2>Good Times</h2>
-        <div className='line'></div>
-        <Link>
-          <img src={goodtimes} alt='goodtimes' />
-        </Link>
-      </Movie>
+      {movies.map(movie => (
+        <Movie key={movie.title}>
+          <h2>{movie.title}</h2>
+          <div className='line'></div>
+          <Link to={{ pathname: movie.url, state: { movie } }}>
+            <img src={movie.mainImg} alt={movie.title} />
+          </Link>
+        </Movie>
+      ))}
     </Work>
   );
 };

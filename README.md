@@ -1,3 +1,21 @@
+Things learnt during current project:
+
+- react-router-dom
+- styled components
+
+Things made in different way:
+
+- movie list in OurWork built dynamically by using map over movies data
+
+* movie data from OurWork to MovieDetail components passed over router link state
+
+Thing might be improved:
+
+- use 'traditional' .container for more responsive layout without padding
+- use single .line?
+
+#
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
