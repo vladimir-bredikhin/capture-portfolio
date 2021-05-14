@@ -2,6 +2,7 @@ Things learnt during current project:
 
 - react-router-dom
 - styled components
+- framer motion
 
 Things made in different way:
 
