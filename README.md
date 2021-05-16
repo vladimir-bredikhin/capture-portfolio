@@ -1,10 +1,10 @@
 Things learnt during current project:
 
-- react-router-dom
-- styled components
-- framer motion
-- reusable components
-- higher order components
+- react-router-dom - render compound page components without reloading current page
+- styled components - keep styles locally in react way
+- framer motion - awesome production ready animation library
+- reusable components - idea behind component state
+- react-intersection-observer - fire events on components currently in view
 
 Things made in different way:
 

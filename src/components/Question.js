@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import React, { useState } from 'react';
 
 const Question = ({ question, children }) => {
-  const [isChildrenShown, setIsChildrenShown] = useState(true);
+  const [isChildrenShown, setIsChildrenShown] = useState(false);
 
   return (
     <motion.div

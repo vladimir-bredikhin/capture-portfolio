@@ -1,44 +1,36 @@
 import styled from 'styled-components';
+import { scrollReveal } from '../animation';
 import home2 from '../img/home2.png';
 import { clock, diaphragm, money, teamwork } from '../img/icon';
 import { Description, Image, Section } from '../styles';
+import useScroll from './useScroll';
+
+const CARD_ITEMS = [
+  { icon: clock, header: 'Efficient' },
+  { icon: teamwork, header: 'Teamwork' },
+  { icon: diaphragm, header: 'Diaphragm' },
+  { icon: money, header: 'Affordable' },
+];
 
 const ServicesSection = () => {
+  const [sectionRef, controls] = useScroll();
+
   return (
-    <Services>
+    <Services variants={scrollReveal} animate={controls} ref={sectionRef}>
       <Description>
         <h2>
           High <span>quality</span> services
         </h2>
         <Cards>
-          <Card>
-            <div className='icon'>
-              <img src={clock} alt='icon' />
-              <h3>Efficient</h3>
-            </div>
-            <p>Lorem ipsum dolor sit amet.</p>
-          </Card>
-          <Card>
-            <div className='icon'>
-              <img src={teamwork} alt='icon' />
-              <h3>Teamwork</h3>
-            </div>
-            <p>Lorem ipsum dolor sit amet.</p>
-          </Card>
-          <Card>
-            <div className='icon'>
-              <img src={diaphragm} alt='icon' />
-              <h3>Diaphragm</h3>
-            </div>
-            <p>Lorem ipsum dolor sit amet.</p>
-          </Card>
-          <Card>
-            <div className='icon'>
-              <img src={money} alt='icon' />
-              <h3>Affordable</h3>
-            </div>
-            <p>Lorem ipsum dolor sit amet.</p>
-          </Card>
+          {CARD_ITEMS.map(({ icon, header }) => (
+            <Card key={header}>
+              <div className='icon'>
+                <img src={icon} alt='icon' />
+                <h3>{header}</h3>
+              </div>
+              <p>Lorem ipsum dolor sit amet.</p>
+            </Card>
+          ))}
         </Cards>
       </Description>
       <Image>
@@ -71,7 +63,7 @@ const Card = styled.div`
   .icon {
     display: flex;
     align-items: center;
-    
+
     h3 {
       margin-left: 1rem;
       background-color: #fff;
