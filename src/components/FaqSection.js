@@ -1,6 +1,15 @@
+import { AnimateSharedLayout, motion } from 'framer-motion';
 import React from 'react';
 import styled from 'styled-components';
 import { Section } from '../styles';
+import Question from './Question';
+
+const QUESTIONS = [
+  'How Do I Start?',
+  'Daily Schedule?',
+  'Different Payment Methods?',
+  'What Products Do You Offer?',
+];
 
 const FaqSection = () => {
   return (
@@ -8,50 +17,26 @@ const FaqSection = () => {
       <h2>
         Any questions? <span>FAQ</span>
       </h2>
-      <div className='question'>
-        <h4>How Do I Start?</h4>
-        <div className='answer'>
-          <p>Lorem ipsum dolor sit amet.</p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta,
-            tempora.
-          </p>
-        </div>
-        <div className="faq-line"></div>
-      </div>
-      <div className='question'>
-        <h4>Daily Schedule?</h4>
-        <div className='answer'>
-          <p>Lorem ipsum dolor sit amet.</p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta,
-            tempora.
-          </p>
-        </div>
-        <div className="faq-line"></div>
-      </div>
-      <div className='question'>
-        <h4>Different Payment Methods?</h4>
-        <div className='answer'>
-          <p>Lorem ipsum dolor sit amet.</p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta,
-            tempora.
-          </p>
-        </div>
-        <div className="faq-line"></div>
-      </div>
-      <div className='question'>
-        <h4>What Products Do You Offer?</h4>
-        <div className='answer'>
-          <p>Lorem ipsum dolor sit amet.</p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta,
-            tempora.
-          </p>
-        </div>
-        <div className="faq-line"></div>
-      </div>
+      <AnimateSharedLayout>
+        {QUESTIONS.map(question => (
+          <Question {...{ question }} key={question}>
+            <motion.div
+              className='answer'
+              initial={{ opacity: 0 }}
+              animate={{
+                opacity: 1,
+                transition: { duration: 0.75, delay: 0.25 },
+              }}
+            >
+              <p>Lorem ipsum dolor sit amet.</p>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta,
+                tempora.
+              </p>
+            </motion.div>
+          </Question>
+        ))}
+      </AnimateSharedLayout>
     </Faq>
   );
 };

@@ -3,8 +3,12 @@ Things learnt during current project:
 - react-router-dom
 - styled components
 - framer motion
+- reusable components
+- higher order components
 
 Things made in different way:
+
+- faq list built dynamically by using map over questions array
 
 - movie list in OurWork built dynamically by using map over movies data
 
