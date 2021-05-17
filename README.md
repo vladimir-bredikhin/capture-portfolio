@@ -19,6 +19,10 @@ Thing might be improved:
 - use 'traditional' .container for more responsive layout without padding
 - use single .line?
 
+To fix:
+
+- slider rainbow animation and athlete animation in OurWork page
+
 #
 
 # Getting Started with Create React App

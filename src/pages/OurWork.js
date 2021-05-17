@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion';
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { fade, line, page, photo, slider, sliderContainer } from '../animation';
+import { page, slider, sliderContainer } from '../animation';
+import Movie from '../components/Movie';
 import { MovieState } from '../movieState';
 
 const OurWork = () => {
@@ -23,19 +23,8 @@ const OurWork = () => {
         <Frame4 variants={slider} />
       </motion.div>
       {movies.map(movie => (
-        <Movie key={movie.title}>
-          <motion.h2 variants={fade}>{movie.title}</motion.h2>
-          <motion.div variants={line} className='line'></motion.div>
-          <Link to={{ pathname: movie.url, state: { movie } }}>
-            <Hide>
-              <motion.img
-                variants={photo}
-                src={movie.mainImg}
-                alt={movie.title}
-              />
-            </Hide>
-          </Link>
-        </Movie>
+        // TODO fix athlete animation before rainbow slider
+        <Movie {...{ movie }} key={movie.title} />
       ))}
     </Work>
   );
@@ -49,26 +38,6 @@ const Work = styled(motion.div)`
   h2 {
     padding: 1rem 0;
   }
-`;
-
-const Movie = styled.div`
-  padding-bottom: 10rem;
-
-  .line {
-    height: 0.5rem;
-    background: #23d997;
-    margin-bottom: 3rem;
-  }
-
-  img {
-    width: 100%;
-    height: 70vh;
-    object-fit: cover;
-  }
-`;
-
-const Hide = styled.div`
-  overflow: hidden;
 `;
 
 const Frame1 = styled(motion.div)`
