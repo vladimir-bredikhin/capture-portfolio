@@ -55,6 +55,7 @@ const Services = styled(Section)`
 const Cards = styled.div`
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 `;
 
 const Card = styled.div`
