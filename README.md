@@ -12,7 +12,9 @@ Things made in different way:
 
 - movie list in OurWork built dynamically by using map over movies data
 
-* movie data from OurWork to MovieDetail components passed over router link state
+- movie data from OurWork to MovieDetail components passed over router link state
+
+- got working ScrollTop in App component just before Switch
 
 Thing might be improved:
 

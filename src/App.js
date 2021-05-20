@@ -2,6 +2,7 @@ import { AnimatePresence } from 'framer-motion';
 import { Route, Switch, useLocation } from 'react-router';
 import GlobalStyle from './components/GlobalStyle';
 import Nav from './components/Nav';
+import ScrollTop from './components/ScrollTop';
 import AboutUs from './pages/AboutUs';
 import ContactUs from './pages/ContactUs';
 import MovieDetail from './pages/MovieDetail';
@@ -14,6 +15,7 @@ function App() {
       <GlobalStyle />
       <Nav />
       <AnimatePresence exitBeforeEnter>
+        <ScrollTop />
         <Switch location={location} key={location.pathname}>
           <Route exact path='/' component={AboutUs} />
           <Route exact path='/work' component={OurWork} />
